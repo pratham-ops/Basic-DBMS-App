@@ -1,0 +1,58 @@
+<%- include('./header.ejs') -%>
+
+    <h1 class="text-center mt-2">HR DATA</h1>
+    <table class="table ms-2 table-striped table-hover table-bordered table-info">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Department</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <% i = 0 %>
+            <% p.forEach(function(pi) {i++ %>
+                <tbody>
+                    <tr>
+                        <!-- <th scope="row">1</th> -->
+                        <td>
+                            <%= i %>
+                        </td>
+                        <td>
+                            <%= pi.Name %>
+                        </td>
+                        <td>
+                            <%= pi.Phone %>
+                        </td>
+                        <td>
+                            <%= pi.Email %>
+                        </td>
+                        <td>
+                            <%= pi.Salary %>
+                        </td>
+                        <td>
+                            <%= pi.Department %>
+                        </td>
+                        <td>
+                            <form action="/delpost" method="post">
+                                <input type="hidden" value="<%= pi._id %>" name='pid'>
+                                <button class="btn btn-danger btn-sm">Delete 💣</button>
+                            </form>
+                        </td>
+                        <td>
+                            <a href="/updatepost/<%= pi._id %> " class="btn btn-primary">
+                                Update ✍️
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+                <div>
+
+                </div>
+                <% }); %>
+    </table>
+    <%- include('./footer.ejs') %>

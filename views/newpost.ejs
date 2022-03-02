@@ -1,0 +1,64 @@
+<%- include('./header.ejs') -%>
+
+    <h1 class="text-center mt-2">Add Record</h1>
+    <form action="/new" method="post">
+        <div class="container">
+            <div class="row">
+                <div class="m-3 col-md-4">
+                    <div class="form-text">
+                        Name
+                    </div>
+                    <input type="text" class="form-control" name="Name">
+                </div>
+                <div class="m-3 col-md-4 ms-5">
+                    <div class="form-text">
+                        Phone Number
+                    </div>
+                    <input type="numbwe" class="form-control" name="Phone">
+                </div>
+            </div>
+            <div class="m-1 row mb-3">
+                <div class="form-text">
+                    Email-Id
+                </div>
+                <div class="col-md-9">
+                    <input type="email" class="form-control" ` name="Email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="m-3 col-md-4">
+                    <div class="form-text">
+                        Salary
+                    </div>
+                    <input type="text" class="form-control" name="Salary">
+                </div>
+                <div class="m-3 col-md-4 ms-5">
+                    <div class="form-text">
+                        Department
+                    </div>
+                    <input type="numbwe" class="form-control" name="Department">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 ms-3">
+                    <button type="submit" class="btn btn-success">
+                       Submit
+                   </button>
+                </div>
+                <div class="col-md-2">
+                    <button type="reset" class="btn btn-primary p-2">
+                       Reset
+                   </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <hr>
+    <% if(result!='') { %>
+        <div class="alert alert-success">
+            <h2>✅
+                <%= result %>
+            </h2>
+            <% } %>
+        </div>
+        <%- include('./footer.ejs') %>

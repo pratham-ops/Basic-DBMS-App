@@ -8,7 +8,7 @@ const db = mongodb+srv://Pratham:<Pratham>@cluster1.w8jan.mongodb.net/TestDb?ret
 app.use(bodyParser.urlencoded({ extended: false }))
 app.set('view engine', 'ejs');
 
-mongoose.connect('mongodb://localhost:27017/TestDb');
+mongoose.connect(db);
 
 // Schema
 const TestSchema = new mongoose.Schema({

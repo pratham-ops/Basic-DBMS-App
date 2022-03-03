@@ -3,12 +3,13 @@ var bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const app = express()
 const port = process.env.PORT || 3000
-// const db = mongodb+srv://Pratham:<Pratham>@cluster1.w8jan.mongodb.net/TestDb?retryWrites=true&w=majority
+const db = mongodb+srv://Pratham_5200:<Pratham>@cluster1.w8jan.mongodb.net/TestDb?retryWrites=true&w=majority
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.set('view engine', 'ejs');
 
-mongoose.connect('mongodb://localhost:27017/TestDb');
+// mongoose.connect('mongodb://localhost:27017/TestDb');
+mongoose.connect(db);
 
 // Schema
 const TestSchema = new mongoose.Schema({
